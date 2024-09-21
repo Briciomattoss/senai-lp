@@ -1,7 +1,8 @@
 <meta charset="uft-8">
 <script>
-    const Dias = Number(prompt("Número de dias: "))
-    const horas = Number(prompt("Número de horas: "))
-    const total = dias +  horas;
-    alert(`Total de Horas:`)
+    const dias = Number(prompt("Número de dias: "));
+    const horas = Number(prompt("Número de horas: "));
+    const diasConvertidos = dias * 24;
+    const total = diasConvertidos + horas;
+    alert(`Total de dias: ${dias.toFixed(0)}\nTotal de horas: ${total.toFixed(0)}`)
 </script>
