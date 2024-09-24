@@ -1,8 +1,8 @@
 <meta charset="uft-8">
 <script>
-    const produto = (prompt("Produto"));
-    const pproduto = Number(prompt("Preço do produto"));
+    const produto = (prompt("Qual o produto?"));
+    const pproduto = Number(prompt("Qual o preço do produto?"));
     const produtoComDesconto = pproduto - (pproduto * 0.10);
     const produtoParcelado = pproduto / 3;
-    alert (`${produto}: À vista com 10% de desconto: ${produtoComDesconto.toFixed(2)}\nDividido em 3x: ${produtoParcelado.toFixed(2)}`);
+    alert (`${produto}: À vista com 10% de desconto: ${produtoComDesconto.toFixed(2)}\nDividido em até 3x/sem juros: ${produtoParcelado.toFixed(2)}`);
 </script>
