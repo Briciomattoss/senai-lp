@@ -1,9 +1,9 @@
 comandos:
 git init
-git config --local user.name "Luiz Felipe"
-git config --local user.email "luizfelipe.freire@gmail.com"
+git config --local user.name "Fabrício Matos De Sousa"
+git config --local user.email "Briciomattoss@gmail.com"
 git status
 git push -u origin master 
 
 -- quando necessário
-git config credential.username "Luiz Felipe"
+git config credential.username "Fabrício Matos De Sousa"
