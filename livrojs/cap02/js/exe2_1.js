@@ -6,5 +6,5 @@ const resp = document.querySelector("h3");
 frm.addEventListener("submit", (e)=>{
     const nome = frm.inNome.value; // obtém o nome digitado no form
     resp.innerText = `Olá ${nome}`; // exibe a resposta do progama
-    e.preventDefault(); // vai evitar que o form envio os dados pro destino.phpd
+    e.preventDefault(); // vai evitar que o form envio os dados pro destino.php
 });
