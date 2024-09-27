@@ -13,5 +13,6 @@ frm.addEventListener("submit", (e)=>{
     resp2.innerText = `${horas} horas(s) e ${minutos} minuto(s)`; // saída
     
     e.preventDefault();
+    
 
 });
