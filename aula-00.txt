@@ -8,6 +8,11 @@ git push -u origin master
 -- quando necessário
 git config credential.username "Fabrício Matos De Sousa"
 
+clone em casa
+
+git clone https://github.com/Briciomattoss/senai-lp.git
+git config --local user.name "Fabrício Matos De Sousa"
+git config --local user.email "Briciomattoss@gmail.com"
 
 
 <!DOCTYPE html>
