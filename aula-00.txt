@@ -32,3 +32,5 @@ git config --local user.email "Briciomattoss@gmail.com"
     </form>
 </body>
 </html>
+
+Pesquisar sobre GitHub Pages - Atividade da aula
