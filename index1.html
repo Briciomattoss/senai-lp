@@ -11,40 +11,44 @@
     
     <h2>Exercícios: Cap 01</h2>
     <ul>
-        <script>
-            const arquivos = ["Arquivo 01","Arquivo 02"];
-            for(let i = 0; I < arquivos.length; i++){ // igual a i= i +1
-                document.write(arquivos[i])
-            }
-
-        </script>
-        <li><a href="livrojs/cap01/exe1_1.html">Exemplo 1.1</a></li>
+            <script>
+                const arquivos = ["livrojs/cap01/exe1_1.html",
+                    "livrojs/cap01/exe1_2.html",
+                    "livrojs/cap01/exe1_3.html",
+                    "livrojs/cap01/exe1_4.html",
+                    "livrojs/cap01/exe1_5.html",
+                    "livrojs/cap01/exe1_6.html",
+                    "livrojs/cap01/exe1_7.html",
+                    "livrojs/cap01/exe1_8.html",
+                    "livrojs/cap01/resp1_a.html",
+                    "livrojs/cap01/resp1_b.html",
+                    "livrojs/cap01/resp1_c.html",
+                    "livrojs/cap01/resp1_d.html",
+                    "livrojs/cap02/exe2_1.html",
+                    "livrojs/cap02/exe2_2.html",
+                    "livrojs/cap04/exe4_1.html",
+                    "livrojs/cap04/exe4_2.html",
+                    "livrojs/cap04/exe4_3.html",
+                    "livrojs/cap04/resp1_a.html",
+                    "livrojs/cap04/resp1_b.html",
+                    "livrojs/cap04/resp1_c.html",
+                    "livrojs/cap04/resp1_d.html"];
+                    let cap = ""
+                for (let i = 0; i < arquivos.length; i++) {
+                    let url = arquivos[i].split("/")
+                    if(cap != url[1]){
+                        cap = url[1]
+                        document.write(`<h3>${cap.replace("cap","Capítulo ")}</h3>`)
+                    }
+                    let link = arquivos[i]
+                    .substring(14)
+                    .replace(".html","")
+                    .replace("exe","Exemplo")
+                    .replace("resp1","Resposta")
+                    .replace("_",".")
+                    document.write(`<li><a href="${arquivos[i]}">${link}</a></li>`);
+                }
+            </script>
         
     </ul>
 </html>
-
-"livrojs/cap04\exe4_1.html",
-"livrojs/cap04\exe4_1.html",
-"livrojs/cap04\exe4_2.html",
-"livrojs/cap04\exe4_3.html",
-"livrojs/cap04\exe4_4.html",
-"livrojs/cap04\exe4_5.html",
-"livrojs/cap04\exe4_6.html",
-"livrojs/cap04\resp1_a.html",
-"livrojs/cap04\exe4_5.html",
-"livrojs/cap04\exe4_6.html",
-"livrojs/cap04\resp1_a.html",
-"livrojs/cap04\exe4_6.html",
-"livrojs/cap04\resp1_a.html",
-"livrojs/cap04\resp1_a.html",
-"livrojs/cap04\resp1_a.html",
-"livrojs/cap04\resp1_b.html"
-"livrojs/cap04\resp1_b.html",
-"livrojs/cap04\resp1_c.html",
-"livrojs/cap04\resp1_d.html",
-"livrojs/cap04\resp1_d.html"],
-
-const arquivos = ["Arquivo 01","Arquivo 02"];
-for(let i = 0; I < arquivos.length; i++){ // igual a i= i +1
-    document.write(arquivos[i])
-}
