@@ -9,8 +9,8 @@
       <ExibirLog Valor="False"/>
     </Configuracoes>
     <Arquivos>
-      <Arq01 Valor=""/>
-      <Arq02 Valor=""/>
+      <Arq01 Valor="C:\USERS\EAD\DOCUMENTS\SENAI-LP\BD\LOGICO_1.BRM"/>
+      <Arq02 Valor="C:\USERS\EAD\DOCUMENTS\SENAI-LP\BD\LOGICO_2.BRM"/>
       <Arq03 Valor=""/>
       <Arq04 Valor=""/>
       <Arq05 Valor=""/>
