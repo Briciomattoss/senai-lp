@@ -15,4 +15,4 @@ create table estadio(
 
     show tables; -- mostra as tabelas de uma base de dados
 
-    desc estadios; -- descreve a estrutura de uma tabela 
+    desc estadio; -- descreve a estrutura de uma tabela 
