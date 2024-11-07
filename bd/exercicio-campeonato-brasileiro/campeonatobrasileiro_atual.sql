@@ -138,6 +138,12 @@ insert into time(nome_completo,nome,sigla,cidade,estado,id_estadio) values
 ('São Paulo Futebol Clube','São Paulo','SAO','São Paulo','SP',1),
 ('Club de Regatas Vasco da Gama','Vasco','VAS','Rio de Janeiro','RJ',1);
 
+insert into estadio(nome, endereco, capacidade) values
+('Estádio Antônio Accioly', 'Rua C-230, s/n - Setor Santa Genoveva, Goiânia - GO', '12.500'),
+('Estádio Heriberto Hülse', 'Rua XV de Novembro, 1299 - Centro, Criciúma - SC', '19300'),
+('Estádio Alfredo Jaconi', 'Rua dos Imigrantes, s/n - Bairro Esplanada, Caxias do Sul - RS', '19700'),
+('Estádio Manoel Barradas', 'Av. Édison Carneiro, s/n - Barradão, Salvador - BA', '30000');
+
 select * from time;
 select * from estadio;
 
@@ -161,5 +167,50 @@ update time set id_estadio = 20 where id_time = 17;
 update time set id_estadio = 16 where id_time = 18;
 update time set id_estadio = 2 where id_time = 19;
 update time set id_estadio = 17 where id_time = 20;
+
+select * from time;
+select * from estadio;
+
+update time set
+nome_completo = 'Atlético Clube Goianiense',
+nome = 'Goiás',
+sigla = 'ACG',
+cidade = 'Goiânia',
+estado = 'GO',
+id_estadio = 21
+where id_time = 1;
+
+update time set
+nome_completo = 'Criciúma Esporte Clube',
+nome = 'Criciúma',
+sigla = 'CRI',
+cidade = 'Criciúma',
+estado = 'SC',
+id_estadio = 22
+where id_time = 7;
+
+update time set
+nome_completo = 'Esporte Clube Juventude',
+nome = 'Juventude',
+sigla = 'JUV',
+cidade = 'Caxias do Sul',
+estado = 'RS',
+id_estadio = 23
+where id_time = 13;
+
+update time set
+nome_completo = 'Esporte Clube Vitória',
+nome = 'Vitória',
+sigla = 'VIT',
+cidade = 'Salvador',
+estado = 'BA',
+id_estadio = 24
+where id_time = 18;
+
+select * from time where id_time in (1,7,13,18);
+
+
+
+
 
 
