@@ -8,7 +8,6 @@ A SELECTinstrução é usada para selecionar dados de um banco de dados.
 */
 SELECT CustomerName, City FROM Customers;
 
-/*
 A instrução SQL SELECT DISTINCT
 A SELECT DISTINCTinstrução é usada para retornar apenas valores distintos (diferentes).
 */
