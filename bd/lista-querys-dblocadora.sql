@@ -20,19 +20,29 @@ select * from filme where duracao_do_filme > 100 and classificacao = 'G';
 /*7. Alterar o ano de lançamento igual 2008 para filmes que possuem duração da locação menor que 4 e classificação igual a "PG". */
 update filme set ano_de_lancamento = 2008 where duracao_da_locacao < 4 and classificacao = 'PG';
 
-
-select * from filme; 
-
 /*8. Listar a quantidade de filmes que estejam classificados como "PG-13" e preço da locação maior que 2.40.*/
-
+select COUNT(*) from filme where classificacao = 'PG' and preco_da_locacao < '2.40';
+select * from filme;
 /*9. Quais os idiomas que possuem filmes cadastrados? */
+select * from idioma where idioma_id in (select idioma_id from filme);
+
+select titulo, nome from filme
+inner join idioma on filme.idioma_id = idioma.idioma_id;
+
 
 /*10. Alterar o idioma para "GERMAN" dos filmes que possuem preço da locação maior que 4.*/
+update filme set 
+idioma_id = (select idioma_id from idioma where nome = 'german')
+where preco_da_locacao > 4;
 
 /*11. Alterar o idioma para "JAPANESE" dos filmes que possuem preço da locação igual 0.99.*/
+update filme set
+idioma_id = (select idioma_id from idioma where nome = 'japanese')
+where preco_da_locacao = 0.99;
+
 
 /*12. Listar a quantidade de filmes por classificação.*/
-
+select COUNT(*) from filme where classificacao like '';
 /*13. Listar, sem repetição, os preços de locação dos filmes cadastrados.*/
 
 /*14. Listar a quantidade de filmes por preço da locação.*/
