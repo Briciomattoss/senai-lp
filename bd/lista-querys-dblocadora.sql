@@ -39,22 +39,33 @@ where preco_da_locacao > 4;
 update filme set
 idioma_id = (select idioma_id from idioma where nome = 'japanese')
 where preco_da_locacao = 0.99;
-
-
 /*12. Listar a quantidade de filmes por classificação.*/
-select COUNT(*) from filme where classificacao like '';
+select classificacao, COUNT(*) as quantidade_de_filmes from filme group by classificacao;
+
 /*13. Listar, sem repetição, os preços de locação dos filmes cadastrados.*/
-
+select distinct preco_da_locacao from filme;
 /*14. Listar a quantidade de filmes por preço da locação.*/
-
+select preco_da_locacao, COUNT(*) as quantidade_de_filme from filme group by preco_da_locacao;
 /*15. Listar os precos da locação que possuam mais de 340 filmes.*/
-
+select preco_da_locacao, COUNT(*) AS quantidade_de_filmes from filme group by preco_da_locacao HAVING COUNT(*) > 340;
 /*16. Listar a quantidade de atores por filme ordenando por quantidade de atores crescente.*/
+select titulo, COUNT(*) from filme_ator 
+inner join filme on filme.filme_id = filme_ator_id
+group by titulo
+order by 2 asc;
 
 /*17. Listar a quantidade de atores para os filmes que possuem mais de 5 atores ordenando por quantidade de atores decrescente.*/
+select f.titulo, COUNT(fa.ator_id)
 
 /*18. Listar o título e a quantidade de atores para os filmes que possuem o idioma "JAPANESE" e mais de 10 atores ordenando por ordem alfabética de título e ordem crescente de quantidade de atores.*/
-
+select titulo, COUNT(*) from filme f
+inner join filme_ator fa on f.filme_id = fa.filme_id
+inner join idioma i on f.idioma_id = i.idioma_id
+where i.nome = 'Japanese'
+goup by titulo
+having COUNT(*) > 10
+order by titulo asc , COUNT(*) DESC;
+;
 /*19. Qual a maior duração da locação dentre os filmes?*/
 
 /*20. Quantos filmes possuem a maior duração de locação?*/
@@ -80,7 +91,10 @@ select COUNT(*) from filme where classificacao like '';
 /*30. Listar os anos de lançamento que possuem mais de 400 filmes?*/
 
 /*31. Listar os anos de lançamento dos filmes que possuem mais de 100 filmes com preço da locação maior que a média do preço da locação dos filmes da categoria "Children"?*/
-
+select F>ANO_DE_LANCAMENTO, COUNT(F.TITULO)
+FROM FILME F
+WHERE
+F>PRECO_DA_LOCACAO > (SELECT AVG(F>PRECO_DA_LOCACAO) FROM F, FILME_CATEGORIA FC, CATEGORIA C WHERE F.FILME_ID = FC.FILME_ID AND C.CATEGORIA_ID = FC.CATEGORIA_ID 
 /*32. Quais as cidades e seu pais correspondente que pertencem a um país que inicie com a Letra “E”?*/
 
 /*33. Qual a quantidade de cidades por pais em ordem decrescente?*/
