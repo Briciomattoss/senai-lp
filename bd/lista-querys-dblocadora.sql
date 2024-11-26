@@ -55,26 +55,37 @@ group by titulo
 order by 2 asc;
 
 /*17. Listar a quantidade de atores para os filmes que possuem mais de 5 atores ordenando por quantidade de atores decrescente.*/
-select f.titulo, COUNT(fa.ator_id)
+select f.titulo, COUNT(fa.ator_id);
 
 /*18. Listar o título e a quantidade de atores para os filmes que possuem o idioma "JAPANESE" e mais de 10 atores ordenando por ordem alfabética de título e ordem crescente de quantidade de atores.*/
 select titulo, COUNT(*) from filme f
 inner join filme_ator fa on f.filme_id = fa.filme_id
 inner join idioma i on f.idioma_id = i.idioma_id
 where i.nome = 'Japanese'
-goup by titulo
+group by titulo
 having COUNT(*) > 10
 order by titulo asc , COUNT(*) DESC;
-;
+
 /*19. Qual a maior duração da locação dentre os filmes?*/
-
+select MAX(duracao_da_locacao) from filme;
 /*20. Quantos filmes possuem a maior duração de locação?*/
+select COUNT(*) from filme where duracao_da_locacao = 7;
 
+select * from idioma;
 /*21. Quantos filmes do idioma "JAPANESE" ou "GERMAN" possuem a maior duração de locação?*/
+select COUNT(*) qt from filme as f
+inner join idioma as i on f.idioma_id = i.idioma_id
+where lower(nome) in ('german','japanese')
+and duracao_da_locacao = (select MAX(duracao_da_locacao) from filme);
 
 /*22. Qual a quantidade de filmes por classificação e preço da locação?*/
-
+select COUNT(*),classificacao, preco_da_locacao from filme group by preco_da_locacao, classificacao;
 /*23. Qual o maior tempo de duração de filme por categoria?*/
+
+select c.categoria_id, c.nome, MAX(f.duracao_do_filme) as duracao from filme as f
+inner join filme_categoria as fc on f.filme_id = fc.filme_id
+inner join categoria as c on fc.categoria_id = c.categoria_id
+group by c.categoria_id, c.nome;
 
 /*24. Listar a quantidade de filmes por categoria.*/
 
