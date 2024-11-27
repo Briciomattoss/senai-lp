@@ -87,25 +87,54 @@ inner join filme_categoria as fc on f.filme_id = fc.filme_id
 inner join categoria as c on fc.categoria_id = c.categoria_id
 group by c.categoria_id, c.nome;
 
+
 /*24. Listar a quantidade de filmes por categoria.*/
+
+select COUNT(*) qt ,c.nome, c.categoria_id from filme as f inner join filme_categoria fc
+on f.filme_id = fc.filme_id
+inner join categoria c
+on fc.categoria_id = c.categoria_id
+group by c.categoria_id, c.nome;
 
 /*25. Listar a quantidade de filmes classificados como "G" por categoria.*/
 
+select COUNT(*) quantidade, f.classificacao, c.categoria_id from filme f inner join filme_categoria fc
+on f.filme_id = fc.filme_id
+inner join categoria c
+on fc.categoria_id = c.categoria_id where classificacao = 'G'
+group by c.categoria_id, f.classificacao 
+order by categoria_id asc;
+
+
 /*26. Listar a quantidade de filmes classificados como "G" OU "PG" por categoria.*/
+
+select COUNT(*) quantidade, f.classificacao, c.categoria_id from filme f inner join filme_categoria fc
+on f.filme_id = fc.filme_id
+inner join categoria c
+on fc.categoria_id = c.categoria_id where classificacao in ('G','PG')
+group by c.categoria_id, f.classificacao
+order by categoria_id asc;
 
 /*27. Listar a quantidade de filmes por categoria e classificação.*/
 
+select COUNT(*),c.nome, f.classificacao from filme as f inner join filme_categoria as fc
+on f.filme_id = fc.filme_id
+inner join categoria c
+on fc.categoria_id = c.categoria_id
+group by c.nome, f.classificacao
+order by COUNT(*);
+
 /*28. Qual a quantidade de filmes por Ator ordenando decrescente por quantidade?*/
+
+
 
 /*29. Qual a quantidade de filmes por ano de lançamento ordenando por quantidade crescente?*/
 
 /*30. Listar os anos de lançamento que possuem mais de 400 filmes?*/
 
 /*31. Listar os anos de lançamento dos filmes que possuem mais de 100 filmes com preço da locação maior que a média do preço da locação dos filmes da categoria "Children"?*/
-select F>ANO_DE_LANCAMENTO, COUNT(F.TITULO)
-FROM FILME F
-WHERE
-F>PRECO_DA_LOCACAO > (SELECT AVG(F>PRECO_DA_LOCACAO) FROM F, FILME_CATEGORIA FC, CATEGORIA C WHERE F.FILME_ID = FC.FILME_ID AND C.CATEGORIA_ID = FC.CATEGORIA_ID 
+select 
+
 /*32. Quais as cidades e seu pais correspondente que pertencem a um país que inicie com a Letra “E”?*/
 
 /*33. Qual a quantidade de cidades por pais em ordem decrescente?*/
