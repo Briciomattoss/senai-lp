@@ -73,6 +73,49 @@ from (select * from vw_mandante
 group by sigla);
 select row_number() over() N, c.* from classificacao as c order by pontos desc, V desc, SG desc;
 
+-- 01
+select * from evento;
+SET SQL_SAFE_UPDATES=0;
+update evento set descricao = 'Substituição' where descricao =  'Substitution';
+select * from evento;
+
+
+-- 02
+
+select id_partida, rodada, tm.sigla, gol_mandante, gol_visitante, tv.sigla
+from partida as p
+inner join time as tm on id_mandante = tm.id_time 
+inner join time as tv on id_visitante = tv.id_time
+where gol_mandante is null or rodada >= 35
+order by id_partida;
+
+update partida set gol_mandante = 1 , gol_visitante = 1 where id_partida = 341;
+update partida set gol_mandante = 0 , gol_visitante = 1 where id_partida = 342;
+update partida set gol_mandante = 1 , gol_visitante = 1 where id_partida = 343;
+update partida set gol_mandante = 2 , gol_visitante = 2 where id_partida = 344;
+update partida set gol_mandante = 4 , gol_visitante = 1 where id_partida = 345;
+update partida set gol_mandante = 1 , gol_visitante = 1 where id_partida = 346;
+update partida set gol_mandante = 3 , gol_visitante = 1 where id_partida = 347;
+update partida set gol_mandante = 0 , gol_visitante = 0 where id_partida = 348;
+update partida set gol_mandante = 0 , gol_visitante = 0 where id_partida = 349;
+update partida set gol_mandante = 1 , gol_visitante = 1 where id_partida = 350;
+
+
+update partida set gol_mandante = 0 , gol_visitante = 1 where id_partida = 351;
+update partida set gol_mandante = 0 , gol_visitante = 1 where id_partida = 352;
+update partida set gol_mandante = 0 , gol_visitante = 1 where id_partida = 353;
+update partida set gol_mandante = 0 , gol_visitante = 1 where id_partida = 354;
+update partida set gol_mandante = 0 , gol_visitante = 1 where id_partida = 355;
+update partida set gol_mandante = 0 , gol_visitante = 1 where id_partida = 356;
+update partida set gol_mandante = 0 , gol_visitante = 1 where id_partida = 357;
+update partida set gol_mandante = 0 , gol_visitante = 1 where id_partida = 358;
+update partida set gol_mandante = 0 , gol_visitante = 1 where id_partida = 359;
+update partida set gol_mandante = 0 , gol_visitante = 1 where id_partida = 360;
+update partida set gol_mandante = 0 , gol_visitante = 1 where id_partida = 361;
+update partida set gol_mandante = 0 , gol_visitante = 1 where id_partida = 362;
+update partida set gol_mandante = 0 , gol_visitante = 1 where id_partida = 363;
+
+
 
 
 
