@@ -51,18 +51,58 @@ CREATE FUNCTION signo(dt DATE)
 RETURNS VARCHAR(20)
 DETERMINISTIC
 BEGIN
-	IF DATE_FORMAT(dt,'%m/%d') BETWEEN ' 21/03' AND '19/04' THEN
+	IF DATE_FORMAT(dt,'%m/%d') BETWEEN ' 0321' AND '0419' THEN
 		RETURN 'Áries';
 	END IF;
-    IF DATE_FORMATE(dt,'%m/%d') BETWEEN '20/04' AND '20/05' THEN
+    IF DATE_FORMAT(dt,'%m/%d') BETWEEN '0420' AND '0520' THEN
 		RETURN 'Touro';
 	END IF;
-    IF DATE_FORMAT(dt,'%m/%d') BETWEEN '21/05' AND '20/06' THEN
+    IF DATE_FORMAT(dt,'%m/%d') BETWEEN '0521' AND '0620' THEN
 		RETURN 'Gêmeos';
 	END IF;
-    IF DATE_FORMAT(dt,'%m/%d') BETWEEN '21/06' AND '22/07' THEN
-		RETURN 'Câncer';
+    IF DATE_FORMAT(dt,'%m/%d') BETWEEN '0621' AND '0722' THEN
+		RETURN 'Câncer';	
 	END IF;
-    IF DATE_FORMAT(
+        IF DATE_FORMAT(dt,'%m/%d') BETWEEN '0723' AND '0822' THEN
+		RETURN 'Leão';
+	END IF;
+        IF DATE_FORMAT(dt,'%m/%d') BETWEEN '0823' AND '0922' THEN
+		RETURN 'Virgem';
+	END IF;
+        IF DATE_FORMAT(dt,'%m/%d') BETWEEN '0923' AND '1022' THEN
+		RETURN 'Libra';
+	END IF;
+        IF DATE_FORMAT(dt,'%m/%d') BETWEEN '1023' AND '1121' THEN
+		RETURN 'Escorpião';
+	END IF;
+        IF DATE_FORMAT(dt,'%m/%d') BETWEEN '1122' AND '1221' THEN
+		RETURN 'Sargitário';
+	END IF;
+        IF DATE_FORMAT(dt,'%m/%d') BETWEEN '1222' AND '0119' THEN
+		RETURN 'Capricórnio';
+	END IF;
+        IF DATE_FORMAT(dt,'%m/%d') BETWEEN '0120' AND '0218' THEN
+		RETURN 'Aquário';
+	END IF;
+        IF DATE_FORMAT(dt,'%m/%d') BETWEEN '0219' AND '0320' THEN
+		RETURN 'Peixes';
+	END IF;
+    
 END$$
+
+DELIMITER ;
+
+
+select signo('2024-04-01');
+select signo('2024-05-01');
+select signo('2024-06-01');
+select signo('2024-07-01');
+select signo('2024-08-01');
+select signo('2024-09-01');
+select signo('2024-10-01');
+select signo('2024-11-01');
+select signo('2024-12-01');
+select signo('2024-01-01');
+select signo('2024-02-01');
+select signo('2024-03-01');
     
