@@ -39,6 +39,10 @@ while i < len(lista):
     banco(sql)
     i = i + 1
 
+    # ----------------
+    
+    UPDATE pizza SET preco = 33.00 WHERE calabresa;
+    
 # instalar o request executar no cmd ou no shell dentro dessa pasta
 # Pip install requests
 # pip install mysql-connector-python
