@@ -24,7 +24,7 @@ headers = {
 response = requests.get(url, headers=headers)
 
 # Mostrar o retorno
-print(response.json())
+# print(response.json())
 
 obj = response.json()
 lista = obj['data']['menu']['menu'][1]['itens']
@@ -34,15 +34,14 @@ i = 0
 while i < len(lista):
     titulo = lista[i]['title']
     descricao = lista[i]['description']
+    preco = lista[i]['price']
     # print(f"{titulo} - {descricao}")
-    sql = f"INSERT INTO pizza(sabor, ingredientes) VALUES('{titulo}','{descricao}');"
+    # sql = f"INSERT INTO pizza(sabor, ingredientes) VALUES('{titulo}','{descricao}');"
+    sql = f"update pizza set preco = {preco} where sabor = '{titulo}';"
     banco(sql)
     i = i + 1
-
-    # ----------------
     
-    UPDATE pizza SET preco = 33.00 WHERE calabresa;
-    
+    # ---------------
 # instalar o request executar no cmd ou no shell dentro dessa pasta
 # Pip install requests
 # pip install mysql-connector-python
